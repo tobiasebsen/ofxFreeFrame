@@ -22,6 +22,8 @@ class testApp : public ofBaseApp{
 	
 	ofVideoGrabber grabber;
 	ofTexture texture;
+	ofFbo fbo;
+	
 	ofxFFPlugin* plugin;
-	ofxFFPluginInstance* instance;
+	ofxFFGLInstance* instance;
 };

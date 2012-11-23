@@ -1,9 +1,7 @@
 /*
  *  FFPlugin.h
- *  FreeFrame
  *
  *  Created by Tobias Ebsen on 11/20/12.
- *  Copyright 2012 Tobias Ebsen. All rights reserved.
  *
  */
 
@@ -18,22 +16,23 @@ public:
 	~FFPlugin();
 	
 	PluginInfoStruct* getInfo();
-	bool initialize();
-	bool deInitialize();
-	bool processFrame(void* pFrame, DWORD instanceID);
+	bool  initialize();
+	bool  deInitialize();
+	bool  processFrame(void* pFrame, DWORD instanceID);
 	DWORD getNumParameters();
 	char* getParameterName(DWORD index);
 	DWORD getPluginCaps(DWORD capsIndex);
 	PluginExtendedInfoStruct* getExtendedInfo();
 	
 	char* getParameterDisplay(DWORD index, DWORD instanceID);
-	bool setParameter(DWORD index, float value, DWORD instanceID);
+	bool  setParameter(DWORD index, float value, DWORD instanceID);
 	float getParameter(DWORD index, DWORD instanceID);
 	DWORD instantiate(VideoInfoStruct* videoInfo);
-	bool deInstantiate(DWORD instanceID);
-	bool processFrameCopy(DWORD numInputFrames, void** ppInputFrames, void* pOutputFrame, DWORD instanceID);
+	bool  deInstantiate(DWORD instanceID);
+	bool  processFrameCopy(DWORD numInputFrames, void** ppInputFrames, void* pOutputFrame, DWORD instanceID);
+	DWORD getInputStatus(DWORD instanceID);
 	
-private:
+protected:
 	FF_Main_FuncPtr plugMain;
 };
 

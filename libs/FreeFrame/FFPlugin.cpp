@@ -1,9 +1,7 @@
 /*
  *  FFPlugin.cpp
- *  FreeFrame
  *
  *  Created by Tobias Ebsen on 11/20/12.
- *  Copyright 2012 Tobias Ebsen. All rights reserved.
  *
  */
 
@@ -74,4 +72,8 @@ bool FFPlugin::processFrameCopy(DWORD numInputFrames, void** ppInputFrames, void
 	copyStruct.ppInputFrames = ppInputFrames;
 	copyStruct.pOutputFrame = pOutputFrame;
 	return plugMain(FF_PROCESSFRAMECOPY, (DWORD)&copyStruct, instanceID).ivalue == FF_SUCCESS;
+}
+
+DWORD FFPlugin::getInputStatus(DWORD instanceID) {
+	return plugMain(FF_GETIPUTSTATUS, 0, instanceID).ivalue;
 }

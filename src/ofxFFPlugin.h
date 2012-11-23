@@ -1,17 +1,16 @@
 /*
  *  ofxFFPlugin.h
- *  freeframeExample
  *
  *  Created by Tobias Ebsen on 11/20/12.
- *  Copyright 2012 Tobias Ebsen. All rights reserved.
  *
  */
 
 #pragma once
 
 #include "ofMain.h"
-#include "FFPlugin.h"
-#include "ofxFFPluginInstance.h"
+#include "FFGLPlugin.h"
+#include "ofxFFInstance.h"
+#include "ofxFFGLInstance.h"
 
 typedef enum ffBitDepth {
 	FF_16BIT, FF_24BIT, FF_32BIT
@@ -22,7 +21,8 @@ typedef enum ffOrientation {
 	FF_BOTTOM_LEFT = 2
 };
 
-class ofxFFPluginInstance;
+class ofxFFInstance;
+class ofxFFGLInstance;
 
 class ofxFFPlugin {
 public:
@@ -42,9 +42,10 @@ public:
 	
 	int getCaps(int capsIndex);
 	
-	ofxFFPluginInstance* createInstance(int width, int height, ffBitDepth bitDepth = FF_24BIT, ffOrientation orientation = FF_TOP_LEFT);
+	ofxFFInstance* createInstance(int width, int height, ffBitDepth bitDepth = FF_24BIT, ffOrientation orientation = FF_TOP_LEFT);
+	ofxFFGLInstance* createGLInstance(int width, int height, int x = 0, int y = 0);
 
 protected:
 	void* handle;
-	FFPlugin* plugin;
+	FFGLPlugin* plugin;
 };
