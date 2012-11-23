@@ -26,7 +26,7 @@ class ofxFFGLInstance;
 
 class ofxFFPlugin {
 public:
-	static ofxFFPlugin* load(string file);
+	static ofxFFPlugin* load(ofFile file);
 	
 	int    getType();
 	string getName();

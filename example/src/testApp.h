@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxFFPlugin.h"
+#include "ofxFFHost.h"
 
 class testApp : public ofBaseApp{
 
@@ -24,6 +24,7 @@ class testApp : public ofBaseApp{
 	ofTexture texture;
 	ofFbo fbo;
 	
+	ofxFFHost host;
 	ofxFFPlugin* plugin;
 	ofxFFGLInstance* instance;
 };

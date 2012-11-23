@@ -3,18 +3,20 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 	
+	host.listPluginFiles();
+	host.loadAllPlugins();
+		
 	ofDisableArbTex();
 	
-	grabber.initGrabber(320, 240);
-	texture.allocate(320, 240, GL_RGB, false);
-	fbo.allocate(320, 240);
+	grabber.initGrabber(640, 480);
+	//texture.allocate(320, 240, GL_RGB, false);
+	fbo.allocate(grabber.getWidth(), grabber.getHeight());
 
-	plugin = ofxFFPlugin::load("/Library/Graphics/FreeFrame/FFGLHeat.bundle/Contents/MacOS/FFGLHeat");
-	
+	plugin = host.getPlugin("FFGLHeat");
 	plugin->init();
 
 	if (plugin->getCaps(FF_CAP_PROCESSOPENGL)) {
-		instance = plugin->createGLInstance(320, 240);
+		instance = plugin->createGLInstance(grabber.getWidth(), grabber.getHeight());
 	}
 }
 
@@ -27,18 +29,14 @@ void testApp::update(){
 
 		ofTexture tex = grabber.getTextureReference();
 		instance->processFrame(tex, fbo);
-
-		//ofPixelsRef pixels = grabber.getPixelsRef();
-		//instance->processFrame(pixels);
-		//texture.loadData(pixels.getPixels(), 320, 240, GL_RGB);
 	}
 }
 
 //--------------------------------------------------------------
 void testApp::draw(){
 
-	grabber.draw(0, 0);
-	fbo.draw(320, 0);
+	grabber.draw(0, 0, 320, 240);
+	fbo.draw(320, 0, 320, 240);
 
 	int nparam = plugin->getParameterCount();
 	for (int p=0; p<nparam; p++) {

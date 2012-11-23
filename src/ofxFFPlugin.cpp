@@ -11,8 +11,14 @@
 #include <sys/stat.h>
 #include <dlfcn.h>
 
-ofxFFPlugin* ofxFFPlugin::load(string filename) {
+ofxFFPlugin* ofxFFPlugin::load(ofFile file) {
 	
+	if (file.isDirectory()) {
+		file = ofFile(file.getAbsolutePath() + "/Contents/MacOS/" + file.getBaseName());
+	}
+	
+	string filename = file.getAbsolutePath();
+
 	struct stat st;
 	if(stat(filename.c_str(), &st) != 0)
 		return NULL;

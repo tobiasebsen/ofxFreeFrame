@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16439264165FC4F700EFF3BA /* ofxFFHost.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16439263165FC4F700EFF3BA /* ofxFFHost.cpp */; };
 		168744CD165E8A78000E20E5 /* FFGLPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 168744CC165E8A78000E20E5 /* FFGLPlugin.cpp */; };
 		16874519165F71D7000E20E5 /* ofxFFGLInstance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 16874518165F71D7000E20E5 /* ofxFFGLInstance.cpp */; };
 		1690A612165BD75E006B92E7 /* ofxFFPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1690A5F8165BD75E006B92E7 /* ofxFFPlugin.cpp */; };
@@ -66,6 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		16439262165FC4F700EFF3BA /* ofxFFHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxFFHost.h; path = ../src/ofxFFHost.h; sourceTree = "<group>"; };
+		16439263165FC4F700EFF3BA /* ofxFFHost.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxFFHost.cpp; path = ../src/ofxFFHost.cpp; sourceTree = "<group>"; };
 		168744CA165E8A69000E20E5 /* FFGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFGL.h; path = ../libs/FreeFrame/FFGL.h; sourceTree = SOURCE_ROOT; };
 		168744CB165E8A78000E20E5 /* FFGLPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FFGLPlugin.h; path = ../libs/FreeFrame/FFGLPlugin.h; sourceTree = "<group>"; };
 		168744CC165E8A78000E20E5 /* FFGLPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FFGLPlugin.cpp; path = ../libs/FreeFrame/FFGLPlugin.cpp; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 		1690A5FC165BD75E006B92E7 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				16439263165FC4F700EFF3BA /* ofxFFHost.cpp */,
+				16439262165FC4F700EFF3BA /* ofxFFHost.h */,
 				1690A5F8165BD75E006B92E7 /* ofxFFPlugin.cpp */,
 				1690A5F9165BD75E006B92E7 /* ofxFFPlugin.h */,
 				1690A5FA165BD75E006B92E7 /* ofxFFInstance.cpp */,
@@ -358,6 +363,7 @@
 				168744CD165E8A78000E20E5 /* FFGLPlugin.cpp in Sources */,
 				16874519165F71D7000E20E5 /* ofxFFGLInstance.cpp in Sources */,
 				16A5FEFB165FA11900C4801E /* ofxFFBaseInstance.cpp in Sources */,
+				16439264165FC4F700EFF3BA /* ofxFFHost.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
